@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeCraft Online Compiler</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">&lt;/&gt;</span><span>CodeCraft</span></div>
+    <div class="actions">
+      <select id="language" aria-label="Programming language">
+        <option value="website">HTML Website</option>
+        <option value="javascript">JavaScript (Node.js)</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+      </select>
+      <button id="runButton" class="primary">▶ Run Code</button>
+      <button id="buildButton" class="success">⚡ Build Website</button>
+    </div>
+  </header>
+  <main class="workspace">
+    <section class="editor-panel">
+      <div id="websiteTabs" class="tabs">
+        <button class="tab active" data-file="html">index.html</button>
+        <button class="tab" data-file="css">style.css</button>
+        <button class="tab" data-file="js">script.js</button>
+      </div>
+      <div id="editor"></div>
+      <div class="status"><span id="statusText">Ready</span><span>Monaco Editor</span></div>
+    </section>
+    <section class="right-panel">
+      <div class="panel-heading"><strong id="resultTitle">Website Preview</strong><button id="clearButton">Clear</button></div>
+      <iframe id="preview" title="Website preview" sandbox="allow-scripts"></iframe>
+      <pre id="output" class="output hidden"></pre>
+      <div id="inputBox" class="input-wrap hidden"><label for="stdin">Program input (stdin)</label><textarea id="stdin" placeholder="Enter input passed to your program..."></textarea></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
